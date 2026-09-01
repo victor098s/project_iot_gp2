@@ -1,34 +1,77 @@
 <!doctype html>
-<html lang="pt-br">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./assets/css/styles.css" class="css" />
-    <title>IOT - Red Bear</title>
+    <meta name="description" content="Estação de Monitoramento IoT do Grupo GP2." />
+    <title>Estação IoT | Grupo GP2</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <div class="header">
-      <div class="left">
-        <h1>Projeto de IOT de temperatura, umidade e qualidade do ar</h1>
-        <h2>Com protocolo MQTT e servidor mosquitto</h2>
-        <h2>Desenvolvido por: <span>Red Bear</span></h2>
-      </div>
-      <div class="right">
-        <div class="nav">
-          <ul>
-            <a href="./index.html"><li>Home</li></a>
-            <a href="./pages/Dashboard.html"><li>Dashboard</li></a>
-            <a href="./pages/Sobre.html"><li>Sobre o projeto</li></a>
-          </ul>
-        </div>
+    <header class="site-header">
+      <a class="brand" href="#sobre" aria-label="Ir para o início">
+        <span class="brand-mark" aria-hidden="true">◌</span>
+        <span><strong>ESTAÇÃO</strong><small>IoT Monitor</small></span>
+      </a>
+      <nav aria-label="Navegação principal">
+        <button class="nav-link active" data-view="sobre" type="button">Sobre o projeto</button>
+        <button class="nav-link" data-view="dashboard" type="button">Dashboard ao vivo</button>
+      </nav>
+      <div class="group-id"><span></span> Grupo GP2 · IoT</div>
+    </header>
 
-        <img
-          src="./assets/img/redbear.png"
-          alt="redbear"
-          width="280px"
-          height="280px"
-        />
-      </div>
-    </div>
+    <main>
+      <section id="sobre" class="view active" aria-labelledby="hero-title">
+        <section class="hero">
+          <div class="hero-copy">
+            <p class="eyebrow">SESI SENAI VINHEDO · TURMA IOT</p>
+            <h1 id="hero-title">Dados do ambiente,<br /><em>decisões em tempo real.</em></h1>
+            <p class="lead">Uma estação conectada que acompanha temperatura, umidade e qualidade do ar. O ESP32 lê o ambiente e publica os dados via MQTT para este painel.</p>
+            <button class="primary-button" data-go-dashboard type="button">Abrir dashboard <span>→</span></button>
+          </div>
+          <figure class="hero-visual"><img src="assets/images/estacao-iot.svg" alt="Ilustração da estação IoT com ESP32, sensores e transmissão sem fio" /></figure>
+        </section>
+
+        <section class="about-grid" aria-label="Detalhes do projeto">
+          <article class="about-card">
+            <img src="assets/images/sensores.svg" alt="Ilustração dos sensores DHT11 e MQ-135" />
+            <div><p class="card-number">01</p><h2>Coleta inteligente</h2><p>O DHT11 mede temperatura e umidade. O MQ-135 acompanha a presença de gases e a qualidade do ar.</p></div>
+          </article>
+          <article class="about-card">
+            <img src="assets/images/arquitetura.svg" alt="Diagrama da conexão ESP32, broker Mosquitto e navegador" />
+            <div><p class="card-number">02</p><h2>Comunicação MQTT</h2><p>As leituras seguem pelo Wi-Fi ao broker Mosquitto e chegam ao navegador por WebSockets.</p></div>
+          </article>
+          <article class="about-card accent-card">
+            <div><p class="card-number">03</p><h2>Alertas locais</h2><p>LEDs físicos indicam níveis acima dos limites definidos: temperatura, umidade ou gás.</p><ul><li>Temperatura &gt; 28 °C</li><li>Umidade &gt; 56%</li><li>Gás &gt; 400 ppm</li></ul></div>
+          </article>
+        </section>
+
+        <section class="architecture" aria-labelledby="architecture-title">
+          <div><p class="eyebrow">ARQUITETURA</p><h2 id="architecture-title">Do sensor até a tela, sem perder o ritmo.</h2></div>
+          <ol><li><b>01</b><span>ESP32 lê os sensores<br />a cada 3 segundos</span></li><li><b>02</b><span>Mosquitto recebe via<br />MQTT na porta 1883</span></li><li><b>03</b><span>Dashboard assina via<br />WebSocket na porta 9001</span></li></ol>
+        </section>
+      </section>
+
+      <section id="dashboard" class="view dashboard-view" aria-labelledby="dashboard-title" hidden>
+        <div class="dashboard-top">
+          <div><p class="eyebrow">MONITORAMENTO EM TEMPO REAL</p><h1 id="dashboard-title">Painel ambiental</h1><p>Última atualização: <time id="last-update">aguardando dados</time></p></div>
+          <div id="connection-status" class="connection-status disconnected" role="status"><i></i><span>Desconectado</span></div>
+        </div>
+        <section class="metrics" aria-label="Medições ambientais">
+          <article class="metric-card temperature"><div class="metric-icon">♨</div><p>Temperatura</p><strong><span id="temperature-value">--</span><small>°C</small></strong><span id="temperature-state" class="metric-state">Aguardando leitura</span></article>
+          <article class="metric-card humidity"><div class="metric-icon">♢</div><p>Umidade</p><strong><span id="humidity-value">--</span><small>%</small></strong><span id="humidity-state" class="metric-state">Aguardando leitura</span></article>
+          <article class="metric-card air"><div class="metric-icon">⌁</div><p>Qualidade do ar</p><strong><span id="air-value">--</span><small>ppm</small></strong><span id="air-state" class="metric-state">Aguardando leitura</span></article>
+        </section>
+        <section class="topic-panel"><div><p class="eyebrow">CANAIS MQTT</p><code>aulas/professortupi/#</code></div><p>Dados recebidos automaticamente pelo broker local.</p></section>
+        <aside class="project-banner">Projeto IOT SESI SENAI Vinhedo Grupo GP2</aside>
+      </section>
+    </main>
+
+    <footer><p>Grupo GP2 · Internet das Coisas</p><p>Integrantes: <strong>Thiago Almeida</strong> · <strong>[adicione os demais integrantes]</strong></p></footer>
+    <script src="https://unpkg.com/paho-mqtt@1.1.0/paho-mqtt-min.js"></script>
+    <script src="index.js"></script>
   </body>
 </html>
