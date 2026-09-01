@@ -16,7 +16,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-content: space-between;
-  background-color: #f15000;
+  background: linear-gradient(150deg, #992b00, #ca4300, #ff7322);
   padding: 20px;
   color: #fff;
   border-bottom: 2px #993b00 solid;
@@ -58,4 +58,60 @@ li {
 a,
 li:hover {
   color: #ff8821;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 50px;
+}
+
+.cards {
+  display: flex;
+  justify-content: space-around;
+  width: 1200px;
+  min-height: 500px;
+  align-items: center;
+  background: linear-gradient(150deg, #992b00, #ca4300, #ff7322);
+  border-radius: 8px;
+  margin-bottom: 50px;
+}
+
+.card {
+  width: 300px;
+  height: 200px;
+  background-color: #f15000;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-shadow: -1px 1px 20px 1px #00000041;
+  color: #fff;
+  transition: 0.3s ease-in-out;
+  flex-direction: column;
+}
+.partStatus .disconnected {
+  background-color: #ff3535ee;
+}
+
+.card:hover {
+  transform: translateY(-7px);
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #f15000;
+  font-weight: 500;
+  color: #fff;
+}
+
+.partStatus {
+  background-color: #78ee58;
+  padding: 1rem;
+  border-radius: 8px;
+  color: #fff;
+  margin: 20px;
 }

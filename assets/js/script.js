@@ -62,8 +62,8 @@
         if (topic === TOPIC_TEMP) {
           document.getElementById("temp").innerText = payload;
         } else if (topic === TOPIC_HUM) {
-          document.getElementById("hum").innerText = payload;
+          document.getElementById("umid").innerText = payload;
         } else if (topic === TOPIC_AIR) {
-          document.getElementById("air").innerText = payload;
+          document.getElementById("gas").innerText = payload;
         } 
       }
