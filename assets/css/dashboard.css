@@ -22,6 +22,10 @@ body {
   border-bottom: 2px #993b00 solid;
 }
 
+.header h2 {
+  font-size: 45px;
+}
+
 .left {
   display: flex;
   flex-direction: column;
@@ -37,6 +41,10 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+.right img {
+  margin: 3rem;
 }
 
 .nav ul {
@@ -93,20 +101,21 @@ main {
   flex-direction: column;
 }
 .partStatus {
+  padding: 1rem;
+  color: #fff;
+  margin: 20px;
+}
+
+.status {
   background-color: #78ee58;
   padding: 1rem;
   border-radius: 8px;
-  color: #fff;
-  margin: 20px;
-  transition: background-color 0.3s ease;
 }
 
-.partStatus.connected {
-  background-color: #78ee58;
-}
-
-.partStatus.disconnected {
+.status.disconnected {
   background-color: #ff3535ee;
+  padding: 1rem;
+  border-radius: 8px;
 }
 
 .partStatus .status {
@@ -117,6 +126,17 @@ main {
 
 .card:hover {
   transform: translateY(-7px);
+}
+
+section {
+  display: flex;
+  justify-content: center;
+}
+
+section,
+.banner img {
+  border-radius: 8px;
+  margin-bottom: 50px;
 }
 
 footer {
