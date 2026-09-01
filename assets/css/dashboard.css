@@ -92,8 +92,27 @@ main {
   transition: 0.3s ease-in-out;
   flex-direction: column;
 }
-.partStatus .disconnected {
+.partStatus {
+  background-color: #78ee58;
+  padding: 1rem;
+  border-radius: 8px;
+  color: #fff;
+  margin: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.partStatus.connected {
+  background-color: #78ee58;
+}
+
+.partStatus.disconnected {
   background-color: #ff3535ee;
+}
+
+.partStatus .status {
+  color: #fff;
+  display: inline-block;
+  font-weight: 600;
 }
 
 .card:hover {
@@ -106,12 +125,4 @@ footer {
   background-color: #f15000;
   font-weight: 500;
   color: #fff;
-}
-
-.partStatus {
-  background-color: #78ee58;
-  padding: 1rem;
-  border-radius: 8px;
-  color: #fff;
-  margin: 20px;
 }
