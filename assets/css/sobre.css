@@ -15,22 +15,60 @@ body {
   margin: 0 auto;
 }
 
-.cabecalho {
-  background: linear-gradient(135deg, #ff7a1a, #ff4d2d);
-  padding: 60px 0;
-  border-bottom: 4px solid #fff;
-  text-align: center;
+.header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-between;
+  background: linear-gradient(150deg, #992b00, #ca4300, #ff7322);
+  padding: 20px;
+  color: #fff;
+  border-bottom: 2px #993b00 solid;
 }
 
-.cabecalho h1 {
-  font-size: 3rem;
-  margin-bottom: 10px;
-  color: #ffffff;
+.header h2 {
+  font-size: 45px;
 }
 
-.cabecalho p {
-  font-size: 1.2rem;
-  color: #fff1ea;
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.left span {
+  color: #ff8821;
+}
+
+.right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.right img {
+  margin: 3rem;
+}
+
+.nav ul {
+  display: flex;
+  justify-content: space-between;
+  width: 500px;
+}
+
+a,
+li {
+  list-style: none;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+a,
+li:hover {
+  color: #ff8821;
 }
 
 main {
