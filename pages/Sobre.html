@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Grupo SENAI</title>
+    <title>Sobre o Projeto | Estação Meteorológica IoT</title>
     <link rel="stylesheet" href="../assets/css/sobre.css" />
   </head>
   <body>
@@ -28,36 +28,50 @@
 
     <main class="container">
       <section class="card sobre">
-        <h2>Quem somos</h2>
+        <h2>Sobre o projeto</h2>
         <p>
-          Somos um grupo de estudantes do SENAI dedicados ao aprendizado em
-          tecnologia, criatividade e desenvolvimento de soluções práticas.
-          Acreditamos que o conhecimento é construído através da colaboração, da
-          curiosidade e do esforço constante.
+          Nosso projeto consiste em uma estação meteorológica baseada em Internet
+          das Coisas (IoT). Ela utiliza sensores para coletar dados do ambiente,
+          como temperatura, umidade e outras condições climáticas, transformando
+          essas medições em informações digitais para acompanhamento em tempo real.
         </p>
         <p>
-          Nosso objetivo é desenvolver projetos que conectem teoria e prática,
-          explorando ferramentas digitais, inovação e trabalho em equipe para
-          enfrentar desafios do mundo real.
+          A proposta é unir eletrônica, programação e redes para criar uma solução
+          prática de monitoramento ambiental, acessível e automatizada.
         </p>
       </section>
 
       <section class="card valores">
-        <h2>Nosso propósito</h2>
+        <h2>Como a estação funciona</h2>
         <ul>
-          <li>Aprender de forma prática e aplicada</li>
-          <li>Trabalhar em equipe com responsabilidade</li>
-          <li>Buscar soluções criativas e eficientes</li>
-          <li>Desenvolver habilidades técnicas e pessoais</li>
+          <li><strong>Coleta de dados:</strong> os sensores fazem leituras das condições do ambiente.</li>
+          <li><strong>Dispositivo IoT:</strong> o microcontrolador processa e organiza as informações coletadas.</li>
+          <li><strong>Envio pela rede:</strong> os dados são publicados usando o protocolo MQTT.</li>
+          <li><strong>Dashboard:</strong> as informações recebidas podem ser visualizadas e acompanhadas.</li>
         </ul>
       </section>
 
       <section class="card equipe">
-        <h2>Nosso grupo</h2>
+        <h2>IoT, MQTT e Mosquitto</h2>
         <p>
-          O grupo é formado por alunos com interesse em tecnologia, inovação e
-          projetos colaborativos. Juntos, buscamos aprender, compartilhar ideias
-          e transformar conceitos em resultados concretos.
+          A Internet das Coisas (IoT) permite conectar objetos físicos à internet.
+          Neste projeto, a estação envia os dados dos sensores para outros sistemas
+          sem a necessidade de comunicação direta entre todos os dispositivos.
+        </p>
+        <p>
+          Para essa comunicação utilizamos o MQTT, um protocolo leve e eficiente,
+          ideal para dispositivos IoT. O Mosquitto funciona como o <em>broker</em>
+          MQTT: ele recebe as mensagens publicadas pela estação em tópicos e as
+          distribui para quem estiver inscrito, como o nosso dashboard.
+        </p>
+      </section>
+
+      <section class="card equipe">
+        <h2>Objetivo do projeto</h2>
+        <p>
+          Desenvolver uma experiência prática de monitoramento meteorológico e
+          demonstrar como a tecnologia IoT pode ajudar na coleta, transmissão e
+          análise de dados ambientais de forma rápida, conectada e escalável.
         </p>
       </section>
     </main>
