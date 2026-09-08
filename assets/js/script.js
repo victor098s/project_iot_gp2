@@ -1,3 +1,7 @@
+const grupo = ["Victor", "Isabella", "Thiago", "Amanda", "Arruda"];
+
+localStorage.setItem("grupo: ", JSON.stringify(grupo));
+
 // --- CONFIGURAÇÕES DE CONEXÃO ---
 // Substitua pelo IP do notebook onde o Mosquitto está rodando
 const MQTT_HOST = "10.136.42.122";
