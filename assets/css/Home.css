@@ -19,24 +19,39 @@ body {
   margin: 0 auto;
 }
 
-.cabecalho {
-  background: linear-gradient(135deg, #ff7a1a, #ff4d2d);
-  padding: 24px 0 80px;
-  border-bottom: 4px solid #fff;
-}
-
-.nav {
-  display: flex;
+.header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   justify-content: space-between;
-  align-items: center;
-  margin-bottom: 50px;
+  background: linear-gradient(150deg, #992b00, #ca4300, #ff7322);
+  padding: 20px;
+  color: #fff;
+  border-bottom: 2px #993b00 solid;
 }
 
-.logo {
-  color: #fff;
-  font-weight: 700;
-  font-size: 1.5rem;
-  letter-spacing: 0.08em;
+.header h2 {
+  font-size: 45px;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.left span {
+  color: #ff8821;
+}
+
+.right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.right img {
+  margin: 3rem;
 }
 
 .nav ul {
@@ -58,104 +73,6 @@ li {
 a,
 li:hover {
   color: #ff8821;
-}
-
-.hero {
-  display: grid;
-  grid-template-columns: 1.5fr 0.9fr;
-  align-items: center;
-  gap: 30px;
-}
-
-.tag {
-  display: inline-block;
-  background: rgba(255, 255, 255, 0.15);
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 999px;
-  padding: 8px 14px;
-  margin-bottom: 18px;
-  font-size: 0.8rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.cabecalho h1 {
-  font-size: clamp(2.4rem, 5vw, 4rem);
-  color: #ffffff;
-  margin-bottom: 18px;
-  line-height: 1.1;
-}
-
-.cabecalho p {
-  font-size: 1.1rem;
-  color: #fff1ea;
-  line-height: 1.8;
-  max-width: 620px;
-}
-
-.botoes {
-  display: flex;
-  gap: 16px;
-  margin-top: 28px;
-  flex-wrap: wrap;
-}
-
-.btn {
-  display: inline-block;
-  text-decoration: none;
-  padding: 14px 22px;
-  border-radius: 12px;
-  font-weight: 700;
-  transition: 0.2s ease;
-}
-
-.btn-principal {
-  background: #fff;
-  color: #d62828;
-}
-
-.btn-secundario {
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  color: #fff;
-}
-
-.hero-card {
-  background: rgba(255, 255, 255, 0.14);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  border-radius: 18px;
-  padding: 28px;
-  color: #fff;
-  backdrop-filter: blur(4px);
-}
-
-.hero-card h3 {
-  margin-bottom: 12px;
-  font-size: 1.6rem;
-}
-
-.hero-card p {
-  color: #fff4ee;
-  line-height: 1.7;
-}
-
-.hero-card ul {
-  list-style: none;
-  margin-top: 18px;
-}
-
-.hero-card li {
-  margin-bottom: 10px;
-  color: #fff;
-  position: relative;
-  padding-left: 20px;
-}
-
-.hero-card li::before {
-  content: "•";
-  color: #ffd7c2;
-  position: absolute;
-  left: 0;
 }
 
 main {
